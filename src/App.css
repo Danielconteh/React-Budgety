@@ -22,9 +22,9 @@ body {
 }
 .headerContainer-wrapper {
   color: #fff;
-  height: 40vh;
+  min-height: 40vh;
   width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
     url('./images/micheile-henderson-ZVprbBmT8QA-unsplash.jpg');
   background-position: center;
   background-size: cover;
@@ -130,7 +130,7 @@ END OF HEADER SETUP
 }
 .inc-exp-option {
   width: 2.5rem;
-  height: 44px;
+  /* height: 44px; */
 }
 .user-des {
   width: 50%;
@@ -152,6 +152,7 @@ END OF FORM SETUP
   justify-content: space-between;
   flex-direction: column;
   margin: 0rem auto;
+  margin-bottom: 0.3rem;
 }
 .displayContainer--header {
   text-align: center;
