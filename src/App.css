@@ -1,0 +1,335 @@
+:root {
+  --onePointEight: 1.8rem;
+  --onePoint: 1rem;
+  --onePointFive: 1.5rem;
+  --twoPoint: 2rem;
+  --twoPointFive: 2.5rem;
+}
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+body {
+  box-sizing: border-box;
+  color: #555;
+  font-family: Open Sans;
+  font-size: 62.5%;
+  line-height: 1.7;
+  /* font-family: 'Roboto', sans-serif; */
+}
+.headerContainer-wrapper {
+  color: #fff;
+  height: 40vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('./images/micheile-henderson-ZVprbBmT8QA-unsplash.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.header-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.month {
+  font-size: var(--onePoint);
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  margin-top: var(--onePointEight);
+}
+.totalBudget {
+  font-size: var(--onePointFive);
+  margin-top: var(--onePoint);
+  letter-spacing: 0.199rem;
+}
+
+/* ==================================
+
+===================================*/
+
+.inc-exp-container {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-top: var(--onePointFive);
+}
+.inc-total,
+.exp-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: dodgerblue;
+  background-size: cover;
+  margin: var(--onePoint) auto;
+  width: 60%;
+  padding: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+.exp-total {
+  background-color: #ff5049;
+}
+.inc-text,
+.exp-text {
+  margin-left: var(--onePoint);
+}
+.inc-number,
+.exp-number,
+.expPerc-background {
+  margin-right: var(--onePoint);
+}
+.totalPerc {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  margin-top: var(--onePoint);
+}
+
+.expPerc-background {
+  font-size: 0.95rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  clip-path: inset(10% 0 7% 0);
+  padding: 0.1rem 0.3rem;
+  display: none;
+}
+
+/* ==================================
+END OF HEADER SETUP
+===================================*/
+.form-contairWrapper {
+  border-bottom: 1px solid #e7e7e7;
+  background-color: #f7f7f7;
+  padding: 0.8rem;
+  width: 100%;
+}
+.form-container {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  /* width: 70%; */
+  margin: auto;
+}
+
+.user-des,
+.inc-exp-option,
+.user-value {
+  height: 44px;
+  outline: none;
+  border: 1px solid #e7e7e7;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: border 0.3s;
+}
+.user-des:focus,
+.inc-exp-option:focus,
+.user-value:focus {
+  outline: none;
+  border: 1px solid #ff5049;
+}
+.inc-exp-option {
+  width: 2.5rem;
+  height: 44px;
+}
+.user-des {
+  width: 50%;
+}
+.user-value {
+  width: 3.5rem;
+}
+.submit-btn {
+  display: inline-block;
+}
+
+/* ===============
+END OF FORM SETUP
+===========================*/
+
+.displayInc-container {
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 0rem auto;
+}
+.displayContainer--header {
+  text-align: center;
+  align-self: flex-start;
+  width: 100%;
+  margin: 0 auto;
+  /*the ❗ margin top & bottom should be zero to avoid centering an empty or with small item container to the middle  */
+}
+.displayContainer--header h1 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.2rem;
+  color: dodgerblue;
+}
+.expensesColor h1 {
+  color: #ff5049;
+}
+.submit-btn,
+.del-btn {
+  border: none;
+  background: none;
+  outline: none;
+  vertical-align: middle;
+}
+.icon-submit {
+  font-size: 1.5rem;
+}
+.icon-del {
+  font-size: 1rem;
+}
+
+/*item displaying on the screen setup */
+.Inc-exp-displayContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin: 0rem auto;
+  padding: 0.3rem;
+  text-transform: capitalize;
+  transition: transform 350ms ease-out;
+}
+
+/* ================================== */
+.Inc-exp-displayContainer:nth-child(odd) {
+  border-top: 1px solid #e7e7e7;
+  font-size: 1rem;
+}
+.Inc-exp-displayContainer:nth-child(even) {
+  background-color: #f7f7f7;
+  font-size: 1rem;
+}
+
+/* ========PERCENTAGE BACKGROUND=========== */
+
+.exp_per {
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+  margin-right: 0.5rem;
+  background-color: #ffdad9;
+  clip-path: inset(10% 0 7% 0);
+  padding: 0.1rem 0.5rem;
+  vertical-align: middle;
+}
+/* =========================== */
+/* delete button and hovering funality  */
+.del-btn {
+  visibility: hidden;
+  opacity: 0;
+  color: grey;
+  transition: opacity 300ms ease-in;
+}
+.del-btn:active {
+  transform: translateY(-1px);
+}
+
+/* ITEM AMINATION SETUP */
+.Number-val,
+.exp_per {
+  display: inline-block;
+  transform: translateX(0%);
+  transition: transform 250ms ease-out;
+  color: #ff5049;
+}
+.Inc-exp-displayContainer:hover .Number-val {
+  transform: translateX(-25%);
+}
+.Inc-exp-displayContainer:hover .exp_per {
+  transform: translateX(-25%);
+}
+.Inc-exp-displayContainer:hover .del-btn {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ==================================
+MEDIA QUERRIES ❗
+===================================*/
+@media screen and (min-width: 300px) {
+  .inc-total,
+  .exp-total {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .displayInc-container {
+    flex-direction: row;
+  }
+  .month {
+    font-size: var(--onePointFive);
+  }
+  .inc-total,
+  .exp-total {
+    width: 55%;
+  }
+  .form-container {
+    width: 80%;
+  }
+}
+
+/* ==================================
+
+===================================*/
+
+@media screen and (min-width: 776px) {
+  /* HEADER CONTAINER PART */
+  .totalPerc {
+    display: none;
+  }
+  .expPerc-background {
+    display: block;
+  }
+  .inc-total,
+  .exp-total {
+    margin: var(--onePointEight) auto;
+  }
+  .totalBudget {
+    margin-top: var(--onePointEight);
+  }
+  .exp-number {
+    margin-right: -5rem;
+  }
+  /* FORM CONTAINER  PART */
+  .form-container {
+    width: 80%;
+  }
+
+  .Inc-exp-displayContainer {
+    font-size: 1.2rem;
+  }
+  .inc-exp-option {
+    width: 3rem;
+  }
+  .user-des {
+    width: 60%;
+  }
+  .user-value {
+    width: 4rem;
+  }
+}
+
+/* ==================================
+
+===================================*/
+
+@media screen and (min-width: 992px) {
+  .inc-total,
+  .exp-total {
+    width: 40%;
+  }
+}
+
+/* toggle the red focus class */
+.red {
+  color: dodgerblue !important;
+}
+.red-focus:focus {
+  border: 1px solid dodgerblue !important;
+}
