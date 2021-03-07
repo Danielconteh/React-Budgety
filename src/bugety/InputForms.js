@@ -76,6 +76,7 @@ function InputForms() {
           className='user-value focusRef'
           type='number'
           name='numberValue'
+          placeholder='0'
           value={formInput.numberValue}
           onChange={changeData}
         />
